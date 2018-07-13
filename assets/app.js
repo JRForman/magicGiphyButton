@@ -3,14 +3,10 @@ var magicMarvel = ["Captain America", "Thor", "Iron Man", "Black Widow", "Wolver
 
 for (x in magicMarvel) {
     buttonGenerator(magicMarvel[x]);
-
 };
 
 function buttonGenerator(queryWord) {
-
     var newBtn = $("<button>").addClass("magicButton").text(queryWord).attr("id", queryWord);
-
-
     $("#buttonContainer").append(newBtn);
 }
 
@@ -34,9 +30,11 @@ $("#buttonContainer").on("click", function (e) {
         })
             .then(function (response) {
                 var results = response.data;
-                var imgCon = $("#imagesContainer");
+                var imgsCon = $("#imagesContainer");
                 for (var i = 0; i < results.length; i++) {
                     if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+                        var imageContainer = $("<div>");
+                        imageContainer.addClass("imageContainer");
                         var resultImage = $("<img>");
                         resultImage.addClass("gif");
                         resultImage.attr("src", results[i].images.fixed_height_still.url);
@@ -44,7 +42,14 @@ $("#buttonContainer").on("click", function (e) {
                         resultImage.attr("moving", results[i].images.fixed_height.url);
                         resultImage.attr("state", "still");
 
-                        imgCon.prepend(resultImage);
+                        imageContainer.append(resultImage);
+                        
+                        var rating = results[i].rating;
+                        var ratingP = $("<p>").css("color", "white");
+                        ratingP.text(rating);
+                        imageContainer.append(ratingP);
+                        imgsCon.prepend(imageContainer);
+                        
                     }
                 }
             })

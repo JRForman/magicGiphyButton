@@ -14,6 +14,10 @@
     width:85%;
     margin:auto;
     margin-top:10px;
+    
+}
+.imageContainer{
+    float: left;
 }
 .banner{
     width:85%;
