@@ -3,4 +3,47 @@
 }
 .magicButton{
     margin: 5px;
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: 15px;
+}
+#imagesContainer{
+    width:85%;
+    margin:auto;
+    margin-top:10px;
+}
+.banner{
+    width:85%;
+    margin: auto;
+    
+
+}
+#buttonContainer{
+    width:85%;
+    margin:auto;
+    margin-top: 5px;
+}
+#addButton{
+    width: 85%;
+    margin-left:15%;
+    margin-top:15px;
+    
+}
+#banner{
+    margin:auto;
+    width:75%;
+    display:block;
+}
+body{
+    background-color: BLACK;
+}
+#submitButton{
+    color:black;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
 }
